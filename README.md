@@ -61,7 +61,7 @@ Before model training, the project tests whether the feature distributions diffe
 - Welch's t-test,
 - Mann-Whitney U test.
 
-This is a strong methodological choice because it shows that the predictive task is grounded in measurable class differences rather than purely black-box modeling. The statistical testing script also exports the comparison results to a CSV file for reproducibility. fileciteturn0file0L21-L61
+This is a strong methodological choice because it shows that the predictive task is grounded in measurable class differences rather than purely black-box modeling. The statistical testing script also exports the comparison results to a CSV file for reproducibility. 
 
 ### 2. Binary classification: failure detection
 
@@ -144,7 +144,7 @@ The waterfall example also shows how an individual prediction is built up featur
 
 ![SHAP multiclass interpretation](preview_3.png)
 
-The SHAP generation process, including class-wise summary plots and one local waterfall explanation, is implemented directly in the multiclass script. fileciteturn0file2L147-L239
+The SHAP generation process, including class-wise summary plots and one local waterfall explanation, is implemented directly in the multiclass script. 
 
 ---
 
