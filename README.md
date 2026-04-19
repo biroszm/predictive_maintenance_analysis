@@ -1,6 +1,6 @@
 # Predictive Maintenance Analysis
 
-This project builds an end-to-end predictive maintenance workflow on an industrial machine dataset. The goal is twofold: first, detect whether a machine is likely to fail; second, if failure occurs, identify the underlying failure mechanism. The analysis combines exploratory data analysis, statistical testing, binary classification, multiclass failure diagnosis, and model interpretation using SHAP. The repository structure and code support this workflow through dedicated scripts for statistical testing, binary modeling, multiclass modeling, and visualization. fileciteturn0file4L1-L22 fileciteturn0file0L1-L19 fileciteturn0file1L1-L19 fileciteturn0file2L1-L21
+This project builds an end-to-end predictive maintenance workflow on an industrial machine dataset. The goal is twofold: first, detect whether a machine is likely to fail; second, if failure occurs, identify the underlying failure mechanism. The analysis combines exploratory data analysis, statistical testing, binary classification, multiclass failure diagnosis, and model interpretation using SHAP. The repository structure and code support this workflow through dedicated scripts for statistical testing, binary modeling, multiclass modeling, and visualization. 
 
 ## Project at a Glance
 
@@ -18,13 +18,13 @@ This project builds an end-to-end predictive maintenance workflow on an industri
 2. Test whether failure and no-failure groups differ statistically.
 3. Train binary classifiers on `Target`.
 4. Train multiclass classifiers on `Failure Type` after removing `No Failure` rows.
-5. Interpret the strongest model using SHAP. fileciteturn0file4L9-L33 fileciteturn0file0L7-L19 fileciteturn0file1L21-L48 fileciteturn0file2L22-L43
+5. Interpret the strongest model using SHAP. 
 
 ---
 
 ## Why This Project Matters
 
-Predictive maintenance is not just a classification exercise. In a real operational setting, missed failures can lead to downtime, equipment damage, and costly interruptions. This makes the task inherently asymmetric: catching failures is often more important than maximizing overall accuracy. The project therefore emphasizes recall-sensitive evaluation, precision-recall analysis, and interpretable failure diagnosis rather than treating the problem as a generic balanced-class prediction task. That framing is also reflected in the modeling scripts, which use stratified train/test splitting and class-balanced learners. fileciteturn0file4L69-L86 fileciteturn0file1L49-L85
+Predictive maintenance is not just a classification exercise. In a real operational setting, missed failures can lead to downtime, equipment damage, and costly interruptions. This makes the task inherently asymmetric: catching failures is often more important than maximizing overall accuracy. The project therefore emphasizes recall-sensitive evaluation, precision-recall analysis, and interpretable failure diagnosis rather than treating the problem as a generic balanced-class prediction task. That framing is also reflected in the modeling scripts, which use stratified train/test splitting and class-balanced learners. 
 
 ---
 
@@ -38,7 +38,7 @@ The analysis focuses on five operational variables that are consistently used ac
 - `Torque [Nm]`
 - `Tool wear [min]`
 
-These variables are used for both statistical comparison and predictive modeling. The multiclass stage uses the same predictors but changes the target from overall failure status (`Target`) to failure mechanism (`Failure Type`). fileciteturn0file0L8-L19 fileciteturn0file1L21-L36 fileciteturn0file2L22-L37
+These variables are used for both statistical comparison and predictive modeling. The multiclass stage uses the same predictors but changes the target from overall failure status (`Target`) to failure mechanism (`Failure Type`). 
 
 ### Exploratory distributions
 
@@ -71,15 +71,15 @@ The binary stage predicts whether a machine observation is a failure case (`Targ
 - Decision Tree,
 - Random Forest.
 
-The code uses a stratified 80/20 split, median imputation, standardization for logistic regression, and class balancing in all models. Evaluation includes confusion matrix, precision, recall, F1-score, ROC-AUC, and PR-AUC. These choices are appropriate because the problem is imbalanced and precision-recall behavior matters more than accuracy alone. fileciteturn0file1L38-L139
+The code uses a stratified 80/20 split, median imputation, standardization for logistic regression, and class balancing in all models. Evaluation includes confusion matrix, precision, recall, F1-score, ROC-AUC, and PR-AUC. These choices are appropriate because the problem is imbalanced and precision-recall behavior matters more than accuracy alone. 
 
 ### 3. Multiclass classification: failure diagnosis
 
-The second stage excludes `No Failure` rows and predicts the specific failure mechanism. The same three model families are tested again, but now the target is `Failure Type`. The script encodes class labels, preserves class proportions via stratified splitting, evaluates with accuracy and macro/weighted F1, and prints a full confusion matrix and classification report for each model. fileciteturn0file2L38-L130
+The second stage excludes `No Failure` rows and predicts the specific failure mechanism. The same three model families are tested again, but now the target is `Failure Type`. The script encodes class labels, preserves class proportions via stratified splitting, evaluates with accuracy and macro/weighted F1, and prints a full confusion matrix and classification report for each model. 
 
 ### 4. Model interpretation with SHAP
 
-The Random Forest model is then interpreted using SHAP. The workflow generates per-class SHAP summary plots, bar plots, and a waterfall explanation for one example prediction. This moves the project beyond performance reporting and provides feature-level reasoning for why a given failure type is predicted. fileciteturn0file2L147-L239
+The Random Forest model is then interpreted using SHAP. The workflow generates per-class SHAP summary plots, bar plots, and a waterfall explanation for one example prediction. This moves the project beyond performance reporting and provides feature-level reasoning for why a given failure type is predicted. 
 
 ---
 
@@ -97,7 +97,7 @@ This indicates that Random Forest is the strongest overall binary detector in th
 
 ![ROC and Precision-Recall curves](preview_2.png)
 
-These figures are consistent with the evaluation pipeline implemented in the binary modeling script, which computes both ROC-AUC and average precision after fitting all three models. fileciteturn0file1L86-L139
+These figures are consistent with the evaluation pipeline implemented in the binary modeling script, which computes both ROC-AUC and average precision after fitting all three models. 
 
 ### Main interpretation of the binary task
 
@@ -125,7 +125,7 @@ Key observations from the confusion matrix:
 
 ![Multiclass confusion matrix](preview_4.png)
 
-This pattern is aligned with the project logic in the multiclass script, which removes `No Failure` rows and then evaluates performance across the remaining failure mechanisms using confusion matrices and macro-level metrics. fileciteturn0file2L22-L37 fileciteturn0file2L91-L145
+This pattern is aligned with the project logic in the multiclass script, which removes `No Failure` rows and then evaluates performance across the remaining failure mechanisms using confusion matrices and macro-level metrics. 
 
 ---
 
@@ -160,10 +160,10 @@ That structure answers the key questions a reviewer usually cares about: what pr
 
 ## Repository Contents
 
-- `stat_testing.py` — statistical comparison of failure vs. no-failure groups, including Welch's t-test and Mann-Whitney U test, plus boxplots. fileciteturn0file0L1-L77
-- `readit.py` — class-wise bar plot generation for the main numeric variables. fileciteturn0file3L1-L49
-- `models.py` — binary classification workflow with Logistic Regression, Decision Tree, and Random Forest, plus ROC and precision-recall analysis. fileciteturn0file1L1-L173
-- `multi_failure.py` — multiclass failure-type prediction and SHAP-based interpretation. fileciteturn0file2L1-L239
+- `stat_testing.py` — statistical comparison of failure vs. no-failure groups, including Welch's t-test and Mann-Whitney U test, plus boxplots.
+- `readit.py` — class-wise bar plot generation for the main numeric variables. 
+- `models.py` — binary classification workflow with Logistic Regression, Decision Tree, and Random Forest, plus ROC and precision-recall analysis. 
+- `multi_failure.py` — multiclass failure-type prediction and SHAP-based interpretation. 
 
 ---
 
@@ -176,7 +176,7 @@ This is already a solid portfolio project, but several limitations should be sta
 - The project uses only the main numeric variables, so there is room for engineered features such as temperature difference, power-like interactions, or nonlinear condition indicators.
 - Rare classes, especially **Random Failures**, remain difficult to model robustly.
 
-These limitations are already hinted at by the current workflow design and by the observed confusion among minority classes. fileciteturn0file4L155-L163 fileciteturn0file1L49-L59 fileciteturn0file2L91-L145
+These limitations are already hinted at by the current workflow design and by the observed confusion among minority classes.
 
 ---
 
