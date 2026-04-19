@@ -148,16 +148,6 @@ The SHAP generation process, including class-wise summary plots and one local wa
 
 ---
 
-## How to Explain This Project in an Interview or Portfolio
-
-A concise explanation of the project could be:
-
-> I built a predictive maintenance pipeline to solve two linked tasks: detect whether a machine is likely to fail, and then identify the likely failure mechanism. I started with exploratory analysis and statistical testing to verify that failure and non-failure groups differ meaningfully in variables such as torque, tool wear, rotational speed, and temperature. Then I trained Logistic Regression, Decision Tree, and Random Forest models for binary failure detection and multiclass failure diagnosis. Random Forest performed best in the binary setting, reaching a ROC-AUC of 0.962 and an average precision of 0.789. I then used SHAP to explain which features drive specific failure-type predictions, so the project delivers both predictive performance and interpretable maintenance insight.
-
-That structure answers the key questions a reviewer usually cares about: what problem was solved, what data was used, why the approach is credible, what the main results were, and what practical insight was learned.
-
----
-
 ## Repository Contents
 
 - `stat_testing.py` — statistical comparison of failure vs. no-failure groups, including Welch's t-test and Mann-Whitney U test, plus boxplots.
