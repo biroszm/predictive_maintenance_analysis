@@ -46,7 +46,7 @@ The first figure compares the distributions of the main numeric variables betwee
 
 ![Exploratory class distributions](preview_1.png)
 
-The plotting scripts were explicitly designed to compare the same variables by failure status, using sorted class-wise frequency plots and boxplots for direct visual inspection. fileciteturn0file3L1-L49 fileciteturn0file0L52-L77
+The plotting scripts were explicitly designed to compare the same variables by failure status, using sorted class-wise frequency plots and boxplots for direct visual inspection. 
 
 ---
 
