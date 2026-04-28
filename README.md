@@ -159,14 +159,10 @@ The SHAP generation process, including class-wise summary plots and one local wa
 
 ## Limitations
 
-This is already a solid portfolio project, but several limitations should be stated clearly:
-
 - The evaluation appears to rely on a **single train/test split**, so results may vary across splits.
 - The README figures demonstrate strong model performance, but a more formal summary table of precision, recall, and F1 by model would improve reporting.
 - The project uses only the main numeric variables, so there is room for engineered features such as temperature difference, power-like interactions, or nonlinear condition indicators.
 - Rare classes, especially **Random Failures**, remain difficult to model robustly.
-
-These limitations are already hinted at by the current workflow design and by the observed confusion among minority classes.
 
 ---
 
