@@ -37,7 +37,7 @@ print()
 # =========================
 target_col = "Target"
 
-# Use the numeric variables you focused on
+# Use the numeric variables
 feature_cols = [
     "Air temperature [K]",
     "Process temperature [K]",
